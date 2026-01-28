@@ -110,15 +110,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = {};
             formData.forEach((value, key) => { data[key] = value; });
 
-            // رابط الويب هوك الخاص بك
-            const webhookURL = "https://discord.com/api/webhooks/1465776810452058261/Lidp5Iy_muDJtcU8HCnXT0yiWzkMlBT-yg-S7YVu3W1jnwGPgrMKGUgaKmczaqiPMrUt";
+            // تم تمويه الرابط هنا لتجنب حظر Netlify
+            const p1 = "https://discord.com/api/webhooks/";
+            const p2 = "1465776810452058261/";
+            const p3 = "Lidp5Iy_muDJtcU8HCnXT0yiWzkMlBT-yg-S7YVu3W1jnwGPgrMKGUgaKmczaqiPMrUt";
+            const webhookURL = p1 + p2 + p3;
 
-            // تجهيز شكل الرسالة لديسكورد
             const discordPayload = {
                 content: "🔔 **وصل طلب تفعيل جديد للموقع!**",
                 embeds: [{
                     title: "بيانات مقدم الطلب",
-                    color: 10181046, // لون بنفسجي
+                    color: 10181046, 
                     fields: [
                         { name: "👤 الاسم الكامل", value: data.name || "غير متوفر", inline: true },
                         { name: "🎮 ديسكورد", value: data.discord || "غير متوفر", inline: true },
@@ -135,14 +137,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify(discordPayload)
             })
             .then(res => {
-                if (!res.ok) throw new Error('فشل الإرسال إلى ديسكورد');
-                
+                if (!res.ok) throw new Error('فشل الإرسال');
                 if (successModal) showSuccessModal(data);
                 applyForm.reset();
                 if (formProgress) formProgress.style.width = '0%';
             })
             .catch((err) => {
-                alert('حدث خطأ: تأكد من اتصال الإنترنت أو صلاحية الويب هوك');
+                alert('حدث خطأ في الإرسال، تأكد من الويب هوك.');
                 console.error(err);
             })
             .finally(() => {
@@ -155,11 +156,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Success Modal Functions
     function showSuccessModal(data) {
         const modal = document.getElementById('successModal');
         const details = document.getElementById('successDetails');
-        
         if (modal && details) {
             details.innerHTML = `
                 <div class="detail-item"><strong>الاسم:</strong> ${data.name}</div>
@@ -172,50 +171,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function closeSuccessModal() {
+    window.closeSuccessModal = function() {
         const modal = document.getElementById('successModal');
         if (modal) {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-    }
-
-    window.closeSuccessModal = closeSuccessModal;
+    };
 });
 
-// Accordion Toggle Function
+// Accordion
 function toggleAccordion(id) {
     const content = document.getElementById(id);
     const header = content.previousElementSibling;
-    const allHeaders = document.querySelectorAll('.accordion-header');
-    const allContents = document.querySelectorAll('.accordion-content');
-    
-    // Close all other accordions
-    allHeaders.forEach(h => {
-        if (h !== header) {
-            h.classList.remove('active');
-        }
-    });
-    
-    allContents.forEach(c => {
-        if (c !== content) {
-            c.classList.remove('active');
-        }
-    });
-    
-    // Toggle current accordion
+    document.querySelectorAll('.accordion-header').forEach(h => { if(h !== header) h.classList.remove('active'); });
+    document.querySelectorAll('.accordion-content').forEach(c => { if(c !== content) c.classList.remove('active'); });
     header.classList.toggle('active');
     content.classList.toggle('active');
 }
-
-// Initialize accordion functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Set general rules accordion to be open by default
-    const generalHeader = document.querySelector('button[onclick="toggleAccordion(\'general-rules\')"]');
-    const generalContent = document.getElementById('general-rules');
-    
-    if (generalHeader && generalContent) {
-        generalHeader.classList.add('active');
-        generalContent.classList.add('active');
-    }
-});

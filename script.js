@@ -184,6 +184,139 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 });
 
+// Discord OAuth2 System
+const DISCORD_CLIENT_ID = '1466056044319867144'; // استبدل بـ Client ID الخاص بك
+const REDIRECT_URI = window.location.origin + '/apply.html';
+
+// Discord OAuth2 Login Function
+function initDiscordOAuth2() {
+    const discordLoginBtn = document.getElementById('discordLoginBtn');
+    
+    if (discordLoginBtn) {
+        discordLoginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // تخزين الصفحة الحالية للرجوع إليها بعد تسجيل الدخول
+            localStorage.setItem('discordReturnPage', window.location.href);
+            
+            // توجيه المستخدم إلى صفحة تسجيل الدخول في ديسكورد
+            const discordAuthUrl = `https://discord.com/api/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=token&scope=identify`;
+            window.location.href = discordAuthUrl;
+        });
+    }
+    
+    // التحقق من وجود توكن في الرابط عند تحميل الصفحة
+    checkDiscordToken();
+}
+
+// التحقق من وجود توكن في الرابط
+function checkDiscordToken() {
+    const hash = window.location.hash;
+    if (hash.includes('access_token')) {
+        const params = new URLSearchParams(hash.substring(1));
+        const accessToken = params.get('access_token');
+        
+        if (accessToken) {
+            // جلب بيانات المستخدم من ديسكورد
+            fetchDiscordUserData(accessToken);
+        }
+    }
+}
+
+// جلب بيانات المستخدم من ديسكورد
+async function fetchDiscordUserData(accessToken) {
+    try {
+        const response = await fetch('https://discord.com/api/users/@me', {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        });
+        
+        if (response.ok) {
+            const userData = await response.json();
+            
+            // تخزين بيانات المستخدم
+            localStorage.setItem('discordUserData', JSON.stringify(userData));
+            
+            // ملء الفورم بالبيانات إذا كنا في صفحة التقديم
+            fillFormWithDiscordData(userData);
+            
+            // تنظيف الرابط من التوكن
+            window.location.hash = '';
+            
+            // توجيه المستخدم إلى صفحة التقديم إذا لم يكن فيها
+            if (!window.location.href.includes('apply.html')) {
+                window.location.href = 'apply.html';
+            }
+        }
+    } catch (error) {
+        console.error('Error fetching Discord user data:', error);
+        alert('حدث خطأ في جلب بيانات ديسكورد. يرجى المحاولة مرة أخرى.');
+    }
+}
+
+// ملء الفورم ببيانات ديسكورد
+function fillFormWithDiscordData(userData) {
+    const nameInput = document.getElementById('name');
+    const discordInput = document.getElementById('discord');
+    
+    if (nameInput && userData.username) {
+        nameInput.value = userData.username;
+        nameInput.readOnly = true;
+        nameInput.classList.add('discord-authenticated');
+        nameInput.setAttribute('title', 'تم جلب هذه البيانات من ديسكورد');
+    }
+    
+    if (discordInput && userData.username && userData.discriminator) {
+        discordInput.value = `${userData.username}#${userData.discriminator}`;
+        discordInput.readOnly = true;
+        discordInput.classList.add('discord-authenticated');
+        discordInput.setAttribute('title', 'تم جلب هذه البيانات من ديسكورد');
+    }
+    
+    // إضافة مؤشر على أن البيانات جاءت من ديسكورد
+    addDiscordIndicator();
+}
+
+// إضافة مؤشر على أن البيانات جاءت من ديسكورد
+function addDiscordIndicator() {
+    const form = document.querySelector('#applyForm');
+    if (form) {
+        const indicator = document.createElement('div');
+        indicator.className = 'discord-indicator';
+        indicator.innerHTML = `
+            <div style="background: rgba(114, 137, 218, 0.1); border: 1px solid rgba(114, 137, 218, 0.3); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; text-align: center;">
+                <i class="fab fa-discord" style="color: #7289da; margin-left: 0.5rem;"></i>
+                <span style="color: #7289da; font-weight: 600;">تم تسجيل الدخول عبر ديسكورد بنجاح!</span>
+            </div>
+        `;
+        
+        const firstFormGroup = form.querySelector('.form-group');
+        if (firstFormGroup) {
+            form.insertBefore(indicator, firstFormGroup);
+        }
+    }
+}
+
+// التحقق من بيانات ديسكورد المخزنة عند تحميل الصفحة
+function checkStoredDiscordData() {
+    const storedData = localStorage.getItem('discordUserData');
+    if (storedData) {
+        try {
+            const userData = JSON.parse(storedData);
+            fillFormWithDiscordData(userData);
+        } catch (error) {
+            console.error('Error parsing stored Discord data:', error);
+        }
+    }
+}
+
+// تهيئة نظام OAuth2 عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+    initDiscordOAuth2();
+    checkStoredDiscordData();
+});
+
 // Accordion
 function toggleAccordion(id) {
     const content = document.getElementById(id);

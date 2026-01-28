@@ -2591,6 +2591,104 @@ html {
     opacity: 0.8;
 }
 
+/* Discord OAuth2 Styling */
+input[readonly].discord-authenticated {
+    background: rgba(114, 137, 218, 0.1) !important;
+    border: 2px solid rgba(114, 137, 218, 0.3) !important;
+    color: #7289da !important;
+    cursor: not-allowed !important;
+    position: relative;
+}
+
+input[readonly].discord-authenticated::after {
+    content: '🔒';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7289da;
+    font-size: 0.9rem;
+}
+
+.discord-indicator {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Discord Login Button */
+#discordLoginBtn {
+    background: linear-gradient(135deg, #7289da 0%, #5865F2 100%);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(114, 137, 218, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#discordLoginBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+#discordLoginBtn:hover::before {
+    left: 100%;
+}
+
+#discordLoginBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(114, 137, 218, 0.5);
+}
+
+#discordLoginBtn:active {
+    transform: translateY(0);
+}
+
+#discordLoginBtn i {
+    font-size: 1.2rem;
+}
+
+/* Responsive for Discord Button */
+@media (max-width: 768px) {
+    #discordLoginBtn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    #discordLoginBtn i {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #discordLoginBtn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        gap: 8px;
+    }
+    
+    #discordLoginBtn i {
+        font-size: 1rem;
+    }
+}
+
 /* Support Floating Button */
 .support-float-btn {
     position: fixed;

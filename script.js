@@ -123,8 +123,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     color: 10181046, 
                     fields: [
                         { name: "👤 الاسم الكامل", value: data.name || "غير متوفر", inline: true },
-                        { name: "🎮 ديسكورد", value: data.discord || "غير متوفر", inline: true },
-                        { name: "🆔 FiveM / Steam", value: data.fivem || "غير متوفر" }
+                        { name: "� العمر", value: data.age || "غير متوفر", inline: true },
+                        { name: "� ديسكورد", value: data.discord || "غير متوفر", inline: true },
+                        { name: "🆔 FiveM / Steam", value: data.fivem || "غير متوفر", inline: true },
+                        { name: "📝 سبب التفعيل", value: data.reason || "غير متوفر", inline: false }
                     ],
                     footer: { text: "نظام التفعيل التلقائي" },
                     timestamp: new Date()
@@ -162,8 +164,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (modal && details) {
             details.innerHTML = `
                 <div class="detail-item"><strong>الاسم:</strong> ${data.name}</div>
+                <div class="detail-item"><strong>العمر:</strong> ${data.age}</div>
                 <div class="detail-item"><strong>Discord:</strong> ${data.discord}</div>
                 <div class="detail-item"><strong>معرف FiveM:</strong> ${data.fivem}</div>
+                <div class="detail-item"><strong>سبب التفعيل:</strong> ${data.reason}</div>
                 <div class="detail-item"><strong>رقم الطلب:</strong> #${Math.floor(Math.random() * 10000)}</div>
             `;
             modal.style.display = 'flex';

@@ -973,6 +973,14 @@ body::before {
     transform: translateY(-1px) scale(0.98);
 }
 
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    .platforms-showcase {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem;
+    }
+}
+
 /* Responsive for Contact Cards */
 @media (max-width: 768px) {
     .contact-grid {
@@ -1091,7 +1099,7 @@ body::before {
 /* Platforms Showcase */
 .platforms-showcase {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin-top: 4rem;
 }
@@ -2202,7 +2210,8 @@ body::before {
     }
 
     .platforms-showcase {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
     .quick-links-grid {

@@ -1,17 +1,31 @@
-// Quick Links Functionality - النسخة المصلحة
+// Quick Links Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const quickLinkBtns = document.querySelectorAll('.quick-link-btn, .store-item-btn');
+    const quickLinkBtns = document.querySelectorAll('.quick-link-btn');
     
     quickLinkBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
-            // شلنا e.preventDefault() عشان الرابط يفتح طبيعي
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            
             this.style.transform = 'scale(0.95)';
+            this.style.opacity = '0.7';
+            
             setTimeout(() => {
-                this.style.transform = 'scale(1)';
+                window.location.href = href;
             }, 200);
+        });
+        
+        btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.05)';
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
         });
     });
 });
+
+// Preloader
 window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
     if (preloader) {

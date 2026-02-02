@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب التفعيل | Infinite City RP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0e1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(168, 85, 247, 0.2);
+            border-top-color: #a855f7;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="image/logo/INF_LOGO.png" alt="Infinite City RP Logo">
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="rules.html">القوانين</a></li>
+                    <li><a href="apply.html" class="active">طلب التفعيل</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-banner">
+            <img src="image/GIF/BANNER 2.gif" alt="Banner" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index.html">الرئيسية</a>
+                <span>/</span>
+                <span>طلب التفعيل</span>
+            </nav>
+
+            <!-- Apply Section -->
+            <section class="apply-section">
+                <h1 class="section-title">طلب التفعيل</h1>
+                <p class="section-subtitle">قدّم طلب تفعيلك في Infinite City RP</p>
+
+                <div class="apply-form">
+                    <div class="form-progress">
+                        <div class="form-progress-bar" id="formProgress" style="width: 0%"></div>
+                    </div>
+                    <form id="applyForm">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i>الاسم الكامل *</label>
+                            <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل" minlength="3">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="discord"><i class="fab fa-discord"></i>Discord Username *</label>
+                            <input type="text" id="discord" name="discord" placeholder="username#1234" required pattern=".*#.*">
+                            <small style="color: var(--text-secondary); font-size: 0.85rem; display: block; margin-top: 0.5rem;">يجب أن يحتوي على #</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age"><i class="fas fa-birthday-cake"></i>العمر *</label>
+                            <input type="number" id="age" name="age" min="18" max="100" required placeholder="18+">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fivem"><i class="fas fa-id-card"></i>معرف FiveM / Steam *</label>
+                            <input type="text" id="fivem" name="fivem" required placeholder="مثال: steam:11000010abcdef أو FiveM ID" minlength="6">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reason"><i class="fas fa-question-circle"></i>سبب طلب التفعيل *</label>
+                            <textarea id="reason" name="reason" required placeholder="اذكر سبب طلب التفعيل وأي معلومات مهمة" minlength="20" maxlength="1000"></textarea>
+                            <small style="color: var(--text-secondary); font-size: 0.85rem; display: block; margin-top: 0.5rem;">الحد الأدنى: 20 حرف</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="additional"><i class="fas fa-info-circle"></i>معلومات إضافية</label>
+                            <textarea id="additional" name="additional" placeholder="أي معلومات إضافية تريد إضافتها" maxlength="500"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">إرسال طلب التفعيل</button>
+                    </form>
+                </div>
+
+                <!-- Requirements -->
+                <div class="rule-card">
+                    <h2 class="rule-title">متطلبات التفعيل</h2>
+                    <div class="rule-content">
+                        <ul>
+                            <li>✦ العمر المسموح: 18 سنة فما فوق</li>
+                            <li>✦ يجب كتابة Discord Username بشكل صحيح</li>
+                            <li>✦ تأكد من كتابة معرف FiveM / Steam بشكل صحيح</li>
+                            <li>✦ سيتم مراجعة الطلب من قبل الإدارة</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="rules.html">القوانين</a></li>
+                        <li><a href="content-creators.html">صناع المحتوى</a></li>
+                        <li><a href="store.html">المتجر</a></li>
+                        <li><a href="apply.html">طلب التفعيل</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <div class="footer-social">
+                        <a href="https://discord.gg/F3xzrMs8" target="_blank" class="footer-social-link discord">
+                            <i class="fab fa-discord"></i>
+                            <span>Discord</span>
+                        </a>
+                        <a href="https://kick.com/AbuYousef1" target="_blank" class="footer-social-link kick">
+                            <i class="fa-brands fa-kickstarter"></i>
+                            <span>Kick</span>
+                        </a>
+                        <a href="https://www.youtube.com/@Inf-abuyousef" target="_blank" class="footer-social-link youtube">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="https://www.instagram.com/infinitecity1?utm_source=qr" target="_blank" class="footer-social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@infinite.city5?_r=1&_t=ZN-93PsgissCTm" target="_blank" class="footer-social-link tiktok">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok</span>
+                        </a>
+                        <a href="https://creators.sa/infabuyousef" target="_blank" class="footer-social-link support">
+                            <i class="fas fa-heart"></i>
+                            <span>ادعم المشروع</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Infinite City RP</h3>
+                    <p>سيرفر FiveM متطور يقدم تجربة رول بلاي واقعية وممتعة</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>حقوق الطبع والنشر &copy; 2025 Infinite City RP. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>تم إرسال طلب التفعيل بنجاح!</h2>
+            <p>شكراً لك على تقديم طلب التفعيل في Infinite City RP</p>
+            <div class="success-details" id="successDetails"></div>
+            <p class="success-note">سيتم مراجعة طلبك من قبل الإدارة وسيتم التواصل معك عبر Discord</p>
+            <a href="https://discord.gg/F3xzrMs8" target="_blank" class="success-discord-btn">
+                <i class="fab fa-discord"></i>
+                انضم إلى Discord
+            </a>
+            <button class="success-close-btn" onclick="closeSuccessModal()">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>جاري إرسال طلب التفعيل...</p>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Support Floating Button -->
+    <a href="https://creators.sa/infabuyousef" target="_blank" class="support-float-btn">
+        <i class="fas fa-heart"></i>
+        <span>ادعم المشروع</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

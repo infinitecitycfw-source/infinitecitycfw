@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الانضمام إلى Discord | Infinite City RP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background: var(--dark-bg);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .discord-wrapper {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* تأثير الخلفية المتوهجة */
+        .bg-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: var(--accent-color);
+            filter: blur(150px);
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .discord-card {
+            background: rgba(26, 31, 46, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            max-width: 450px;
+            margin: 0 auto;
+            transform: translateY(0);
+            transition: 0.4s ease;
+        }
+
+        .server-logo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 0 30px var(--accent-glow);
+            object-fit: cover;
+        }
+
+        .server-title {
+            color: var(--text-primary);
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .server-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #10b981;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        .btn-join {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #5865F2;
+            color: white;
+            padding: 18px 35px;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
+        }
+
+        .btn-join:hover {
+            background: #4752c4;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(88, 101, 242, 0.4);
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 25px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            color: var(--accent-color);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    <div class="discord-wrapper">
+        <div class="discord-card">
+            <img src="https://via.placeholder.com/150" alt="Infinite City RP Logo" class="server-logo">
+            
+            <h1 class="server-title">Infinite City RP</h1>
+            
+            <div class="server-status">
+                <span class="status-dot"></span>
+                <span>سيرفر الديسكورد متاح الآن</span>
+            </div>
+
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 30px;">
+                أهلاً بك في مجتمعنا! انقر على الزر أدناه للانضمام إلى السيرفر الرسمي والبدء بمغامرتك في مدينة الأحلام.
+            </p>
+
+            <a href="https://discord.gg/F3xzrMs8" class="btn-join">
+                <i class="fab fa-discord"></i>
+                انضم للسيرفر الآن
+            </a>
+
+            <a href="index.html" class="btn-back">
+                <i class="fas fa-arrow-right"></i> العودة للموقع الرسمي
+            </a>
+        </div>
+    </div>
+</body>
+</html>

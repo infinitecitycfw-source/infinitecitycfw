@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite City RP | الرئيسية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0e1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(168, 85, 247, 0.2);
+            border-top-color: #a855f7;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="image/GIF/LOGO_INF.gif" alt="Infinite City RP Logo">
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+                    <li><a href="rules.html">القوانين</a></li>
+                    <li><a href="content-creators.html" class="dropdown-toggle">صناع المحتوى</a></li>
+                    <li><a href="store.html">المتجر</a></li>
+                    <li><a href="apply.html">طلب التفعيل</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="home-hero">
+        <div class="home-hero-media">
+            <video class="home-hero-video" autoplay muted loop playsinline>
+                <source src="image/video/invinite_city_video_logo.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="container">
+            <h1 class="home-hero-title">Infinite City RP | إنفينيت سيتي</h1>
+            <h2 class="home-hero-subtitle">حياكم الله في سيرفر Infinite City RP المتخصص في الرول بلاي نحاول جاهدين تقديم افضل تجربه للرول بلاي في الشرق الاوسط انضم الينا الان و عيش حياتك كما تريد</h2>
+            <a href="#" id="discordLoginBtn" class="home-hero-btn">
+                <i class="fab fa-discord"></i>
+                تسجيل الدخول عبر ديسكورد
+            </a>
+        </div>
+        <div class="shapes-bg">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+            <div class="shape shape-6"></div>
+            <div class="shape shape-7"></div>
+            <div class="shape shape-8"></div>
+        </div>
+    </section>
+
+    <!-- Social Platforms Section -->
+    <section class="social-platforms-section">
+        <div class="container">
+            <h2 class="section-title">منصات التواصل</h2>
+            <p class="section-description">مجتمع سيرفر "Infinite City RP" يمتلك حضورًا قويًا على منصات التواصل الاجتماعي، حيث يعد من الأكبر في العالم. على "ديسكورد" و " التويتر " كعدد متابعين ولاعبين ، وهو السيرفر العربي الاول على العالم يتم تخصيص له قسم خاص في منصة البثوث الشهيرة كيك دوت كوم .</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="stat-number">2000k+</h3>
+                    <p class="stat-label">مجموع الاعضاء</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number">200+</h3>
+                    <p class="stat-label">مجموع المتابعين</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number">60+</h3>
+                    <p class="stat-label">مجتمع الميديا</p>
+                </div>
+            </div>          
+
+            <div class="platforms-showcase">
+                <div class="platform-item">
+                    <h3>كيك</h3>
+                    <div class="platform-image">
+                        <a href="https://kick.com/abuyousef1" target="_blank">
+                            <img src="soucal media/kick.png" alt="Kick">
+                        </a>
+                    </div>
+                </div>
+                <div class="platform-item">
+                    <h3>يوتيوب</h3>
+                    <div class="platform-image">
+                        <a href="https://www.youtube.com/@Inf-abuyousef" target="_blank">
+                            <img src="soucal media/YOUTUBE.png" alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+                <div class="platform-item">
+                    <h3>انستغرام</h3>
+                    <div class="platform-image">
+                        <a href="https://www.instagram.com/infinitecity1?utm_source=qr" target="_blank">
+                            <img src="soucal media/INSTAGRAM.png" alt="Instagram">
+                        </a>
+                    </div>
+                </div>
+                <div class="platform-item">
+                    <h3>تيك توك</h3>
+                    <div class="platform-image">
+                        <a href="https://www.tiktok.com/@infinite.city5?_r=1&_t=ZN-93PsgissCTm" target="_blank">
+                            <img src="soucal media/TIKTOK.png" alt="TikTok">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shapes-bg">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+            <div class="shape shape-6"></div>
+            <div class="shape shape-7"></div>
+            <div class="shape shape-8"></div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community-section">
+        <div class="container">
+            <h2 class="section-title">مجتمع Infinite City RP</h2>
+            <p class="community-text">مجتمع سيرفر "Infinite City RP" العربي هو مجتمع حيوي يجمع بين اللاعبين والمؤثرين والمشاهدين، مما يخلق بيئة تفاعلية وغنية. يشارك اللاعبون في بناء تجارب مميزة داخل السيرفر، بينما يسهم المؤثرون والاستريمرز في نشر المتعة والإثارة عبر البث المباشر، مما يعزز التفاعل والتواصل بين اللاعبين والجماهير. المتابعون يتفاعلون بشكل مستمر، ويشاركون في الفعاليات والمسابقات، مما يعزز روح التعاون والتأثير داخل مجتمع "Infinite City RP" الذي يعكس قوة وتأثير هذا التجمع.</p>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links-section">
+        <div class="container">
+            <div class="quick-links-grid">
+                <div class="quick-link-card">
+                    <h3>من نحن</h3>
+                    <p>"Infinite City RP" هو سيرفر فايف إم مخصص للاعبين العرب، تأسس في عام 2025 بهدف تقديم تجربة لعب استثنائية.</p>
+                    <a href="about.html" class="quick-link-btn">اكتشف المزيد</a>
+                </div>
+                <div class="quick-link-card">
+                    <h3>القوانين</h3>
+                    <p>القوانين تهدف إلى ضمان المتعة والاحترام بين اللاعبين، مع تنظيم سير اللعبة بطريقة عادلة وشفافة.</p>
+                    <a href="rules.html" class="quick-link-btn">الاطلاع على القوانين</a>
+                </div>
+                <div class="quick-link-card">
+                    <h3>اتصل بنا</h3>
+                    <p>يمكنك التواصل معنا عن طريق جميع منصات التواصل الاجتماعي سواء الدسكورد او التويتر</p>
+                    <a href="contact.html" class="quick-link-btn">تواصل معنا</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="rules.html">القوانين</a></li>
+                        <li><a href="content-creators.html">صناع المحتوى</a></li>
+                        <li><a href="store.html">المتجر</a></li>
+                        <li><a href="apply.html">طلب التفعيل</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">تواصل معنا</h3>
+                    <div class="social-links">
+                        <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://kick.com/AbuYousef1" target="_blank" class="social-link">
+                            <i class="fa-brands fa-kickstarter"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@Inf-abuyousef" target="_blank" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/infinitecity1?utm_source=qr" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@infinite.city5?_r=1&_t=ZN-93PsgissCTm" target="_blank" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Infinite City RP. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Support Floating Button -->
+    <a href="https://creators.sa/infabuyousef" target="_blank" class="support-float-btn">
+        <i class="fas fa-heart"></i>
+        <span>ادعم المشروع</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

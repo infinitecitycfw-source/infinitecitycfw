@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا | Infinite City RP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0e1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(168, 85, 247, 0.2);
+            border-top-color: #a855f7;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="image/logo/INF_LOGO.png" alt="Infinite City RP Logo">
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="rules.html">القوانين</a></li>
+                    <li><a href="content-creators.html">صناع المحتوى</a></li>
+                    <li><a href="store.html">المتجر</a></li>
+                    <li><a href="apply.html">طلب التفعيل</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-banner">
+            <img src="image/GIF/BANNER 2.gif" alt="Banner" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index.html">الرئيسية</a>
+                <span>/</span>
+                <span>اتصل بنا</span>
+            </nav>
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">اتصل بنا</h1>
+                <p class="page-subtitle">تواصل مع فريق Infinite City RP</p>
+            </div>
+
+            <!-- Contact Section -->
+            <section class="contact-section">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-discord"></i>
+                        </div>
+                        <h3>ديسكورد</h3>
+                        <p>انضم لمجتمعنا على ديسكورد</p>
+                        <a href="https://discord.gg/F3xzrMs8" target="_blank" class="contact-btn">انضم الآن</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3>انستغرام</h3>
+                        <p>تابعنا على انستغرام لأحدث الأخبار</p>
+                        <a href="https://instagram.com/infinitecityrp" target="_blank" class="contact-btn">تابعنا</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fa-brands fa-kickstarter"></i>
+                        </div>
+                        <h3>كيك</h3>
+                        <p>شاهد بثوثنا المباشرة على كيك</p>
+                        <a href="https://kick.com/infinitecityrp" target="_blank" class="contact-btn">شاهد الآن</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h3>يوتيوب</h3>
+                        <p>اشترك في قناتنا على يوتيوب</p>
+                        <a href="https://youtube.com/@infinitecityrp" target="_blank" class="contact-btn">اشترك</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <h3>تويتر</h3>
+                        <p>تابع آخر الأخبار والتحديثات</p>
+                        <a href="https://twitter.com/infinitecityrp" target="_blank" class="contact-btn">تابعنا</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>البريد الإلكتروني</h3>
+                        <p>للاستفسارات والاقتراحات</p>
+                        <a href="mailto:info@infinitecityrp.com" class="contact-btn">راسلنا</a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>أرسل لنا رسالة</h2>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">الاسم *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">الموضوع *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">الرسالة *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="rules.html">القوانين</a></li>
+                        <li><a href="content-creators.html">صناع المحتوى</a></li>
+                        <li><a href="store.html">المتجر</a></li>
+                        <li><a href="apply.html">طلب التفعيل</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">تواصل معنا</h3>
+                    <div class="social-links">
+                        <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://kick.com/AbuYousef1" target="_blank" class="social-link">
+                            <i class="fa-brands fa-kickstarter"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@Inf-abuyousef" target="_blank" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/infinitecity1?utm_source=qr" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@infinite.city5?_r=1&_t=ZN-93PsgissCTm" target="_blank" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://creators.sa/infabuyousef" target="_blank" class="social-link">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Infinite City RP. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Support Floating Button -->
+    <a href="https://creators.sa/infabuyousef" target="_blank" class="support-float-btn">
+        <i class="fas fa-heart"></i>
+        <span>ادعم المشروع</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

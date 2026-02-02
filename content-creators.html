@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صناع المحتوى | Infinite City RP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0e1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(168, 85, 247, 0.2);
+            border-top-color: #a855f7;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="image/logo/INF_LOGO.png" alt="Infinite City RP Logo">
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="rules.html">القوانين</a></li>
+                    <li><a href="content-creators.html" class="active">صناع المحتوى</a></li>
+                    <li><a href="store.html">المتجر</a></li>
+                    <li><a href="apply.html">طلب التفعيل</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-banner">
+            <img src="image/GIF/BANNER 2.gif" alt="Banner" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <span>الرئيسية</span>
+                <i class="fas fa-chevron-left"></i>
+                <span>صناع المحتوى</span>
+            </nav>
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">صناع المحتوى</h1>
+                <p class="page-subtitle">تعرف على صناع المحتوى المميزين في مجتمع Infinite City RP</p>
+            </div>
+
+            <!-- Content Creators Section -->
+            <section class="content-creators-section">
+                <div class="creators-grid">
+                    <div class="creator-card">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <span>IC</span>
+                        </div>
+                        <h3 class="creator-name">Infinite City RP</h3>
+                        <div class="creator-social">
+                            <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="creator-card">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <span>CC1</span>
+                        </div>
+                        <h3 class="creator-name">Content Creator 1</h3>
+                        <div class="creator-social">
+                            <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="creator-card">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <span>CC2</span>
+                        </div>
+                        <h3 class="creator-name">Content Creator 2</h3>
+                        <div class="creator-social">
+                            <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="creator-card">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                            <span>CC3</span>
+                        </div>
+                        <h3 class="creator-name">Content Creator 3</h3>
+                        <div class="creator-social">
+                            <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="creator-card">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                            <span>CC4</span>
+                        </div>
+                        <h3 class="creator-name">Content Creator 4</h3>
+                        <div class="creator-social">
+                            <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="creator-card">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                            <span>CC5</span>
+                        </div>
+                        <h3 class="creator-name">Content Creator 5</h3>
+                        <div class="creator-social">
+                            <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="creator-card">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                            <span>CC6</span>
+                        </div>
+                        <h3 class="creator-name">Content Creator 6</h3>
+                        <div class="creator-social">
+                            <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="creator-card">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                            <span>CC7</span>
+                        </div>
+                        <h3 class="creator-name">Content Creator 7</h3>
+                        <div class="creator-social">
+                            <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="creator-card">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                            <span>CC8</span>
+                        </div>
+                        <h3 class="creator-name">Content Creator 8</h3>
+                        <div class="creator-social">
+                            <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="creator-card">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%);">
+                            <span>CC9</span>
+                        </div>
+                        <h3 class="creator-name">Content Creator 9</h3>
+                        <div class="creator-social">
+                            <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="creator-card">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, #c471f5 0%, #f64f59 100%);">
+                            <span>CC10</span>
+                        </div>
+                        <h3 class="creator-name">Content Creator 10</h3>
+                        <div class="creator-social">
+                            <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="rules.html">القوانين</a></li>
+                        <li><a href="content-creators.html">صناع المحتوى</a></li>
+                        <li><a href="store.html">المتجر</a></li>
+                        <li><a href="apply.html">طلب التفعيل</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">تواصل معنا</h3>
+                    <div class="social-links">
+                        <a href="https://discord.gg/F3xzrMs8" target="_blank" class="social-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://kick.com/AbuYousef1" target="_blank" class="social-link">
+                            <i class="fa-brands fa-kickstarter"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@Inf-abuyousef" target="_blank" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/infinitecity1?utm_source=qr" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@infinite.city5?_r=1&_t=ZN-93PsgissCTm" target="_blank" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://creators.sa/infabuyousef" target="_blank" class="social-link">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Infinite City RP. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Support Floating Button -->
+    <a href="https://creators.sa/infabuyousef" target="_blank" class="support-float-btn">
+        <i class="fas fa-heart"></i>
+        <span>ادعم المشروع</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

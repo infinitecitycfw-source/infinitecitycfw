@@ -92,39 +92,106 @@
                         <div class="form-progress-bar" id="formProgress" style="width: 0%"></div>
                     </div>
                     <form id="applyForm">
-                        <div class="form-group">
-                            <label for="name"><i class="fas fa-user"></i>الاسم الكامل *</label>
-                            <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل" minlength="3">
+                        <!-- الجزء الأول: البيانات الشخصية والتعريفية -->
+                        <div class="form-section">
+                            <h2 class="form-section-title">
+                                <i class="fas fa-user-circle"></i>
+                                الجزء الأول: البيانات الشخصية والتعريفية
+                            </h2>
+                            
+                            <div class="form-group">
+                                <label for="realIdentity"><i class="fas fa-id-card"></i>الهوية الواقعية *</label>
+                                <p class="form-description">نرجو كتابة اسمك الثلاثي وعمرك الحقيقي (الصدق أساس قبولك)</p>
+                                <input type="text" id="realIdentity" name="realIdentity" required placeholder="الاسم الثلاثي والعمر" minlength="5">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="characterIdentity"><i class="fas fa-user-tag"></i>بطاقة تعريف الشخصية *</label>
+                                <p class="form-description">اذكر اسم الشخصية بالكامل، تاريخ ميلادها، بلد المنشأ، واللغة التي تتحدث بها داخل المدينة</p>
+                                <textarea id="characterIdentity" name="characterIdentity" required placeholder="اسم الشخصية، تاريخ الميلاد، بلد المنشأ، اللغة" minlength="20" maxlength="500"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="characterBio"><i class="fas fa-book"></i>السيرة الذاتية (قصة الشخصية) *</label>
+                                <p class="form-description">اكتب خلفية درامية لشخصيتك تشرح بداياتها ودوافعها (يجب أن تتراوح بين 5 إلى 10 أسطر)</p>
+                                <textarea id="characterBio" name="characterBio" required placeholder="اكتب قصة شخصيتك هنا (5-10 أسطر)" minlength="100" maxlength="1000" rows="8"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="psychologicalAnalysis"><i class="fas fa-brain"></i>التحليل النفسي *</label>
+                                <p class="form-description">بناءً على القصة التي كتبت، ما هي نقاط القوة التي تميز شخصيتك وما هي نقاط الضعف التي قد تقتلها؟</p>
+                                <textarea id="psychologicalAnalysis" name="psychologicalAnalysis" required placeholder="نقاط القوة ونقاط الضعف" minlength="50" maxlength="600" rows="6"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="experience"><i class="fas fa-history"></i>السجل المهني (الخبرة) *</label>
+                                <p class="form-description">هل سبق لك ممارسة الـ Roleplay في مدن أخرى؟ اذكر تجاربك السابقة والمناصب التي شغلتها بالتفصيل</p>
+                                <textarea id="experience" name="experience" required placeholder="تجاربك السابقة في الـ Roleplay" minlength="30" maxlength="800" rows="6"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="settlementGoal"><i class="fas fa-bullseye"></i>الهدف من الاستيطان *</label>
+                                <p class="form-description">ما الذي دفعك لاختيار مدينتنا تحديداً؟ وما هي القيمة المضافة التي ستقدمها للمجتمع؟</p>
+                                <textarea id="settlementGoal" name="settlementGoal" required placeholder="سبب اختيار المدينة والقيمة المضافة" minlength="40" maxlength="600" rows="6"></textarea>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="discord"><i class="fab fa-discord"></i>Discord Username *</label>
-                            <input type="text" id="discord" name="discord" placeholder="username#1234" required pattern=".*#.*">
-                            <small style="color: var(--text-secondary); font-size: 0.85rem; display: block; margin-top: 0.5rem;">يجب أن يحتوي على #</small>
+                        <!-- الجزء الثاني: اختبار الأداء وسلوك الشخصية -->
+                        <div class="form-section">
+                            <h2 class="form-section-title">
+                                <i class="fas fa-theater-masks"></i>
+                                الجزء الثاني: اختبار الأداء وسلوك الشخصية
+                            </h2>
+                            <p class="form-note">ملاحظة: سيتم تقييمك بناءً على مدى التزام شخصيتك بطباعها المذكورة في الجزء الأول</p>
+                            
+                            <div class="form-group">
+                                <label for="honestyTest"><i class="fas fa-handshake"></i>اختبار الأمانة *</label>
+                                <p class="form-description">اتفقت على بيع مركبتك بمبلغ 15,000، وعند إتمام البيع اكتشفت أن المشتري استغل غفلتك ودفع مبلغاً أقل. كيف ستسترد حقك بأسلوب "تقمص الشخصية"؟</p>
+                                <textarea id="honestyTest" name="honestyTest" required placeholder="اكتب رد فعلك كشخصيتك" minlength="50" maxlength="800" rows="6"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="crisisManagement"><i class="fas fa-exclamation-triangle"></i>إدارة الأزمات *</label>
+                                <p class="form-description">تلقيت إشعاراً نهائياً بـ "حجز منزلك" من قبل البنك لعرضه في مزاد علني بسبب تعثرك المادي. ما هي خطتك الاضطرارية لإنقاذ منزلك من الضياع؟</p>
+                                <textarea id="crisisManagement" name="crisisManagement" required placeholder="خطتك لإنقاذ منزلك" minlength="50" maxlength="800" rows="6"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="hostageSituation"><i class="fas fa-user-secret"></i>موقف قلب الطاولة *</label>
+                                <p class="form-description">أثناء قيامك بعملية سطو مسلح، اكتشفت أن الرهينة التي بين يديك هو أحد "رؤوس الإجرام" الكبار في المدينة. كيف ستدير الحوار معه لتخرج من هذا المأزق حياً؟</p>
+                                <textarea id="hostageSituation" name="hostageSituation" required placeholder="كيف ستدير الحوار مع زعيم الإجرام" minlength="50" maxlength="800" rows="6"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fearRP"><i class="fas fa-heart-pulse"></i>قيمة الحياة (Fear RP) *</label>
+                                <p class="form-description">بينما كنت منشغلاً بإصلاح مركبتك، فاجأك شخص بسلاحه من الخلف مطالباً بمفاتيحك وأغراضك. صف لنا ردة فعلك النفسية والجسدية وكيف ستتعامل مع التهديد؟</p>
+                                <textarea id="fearRP" name="fearRP" required placeholder="رد فعلك النفسية والجسدية تجاه التهديد" minlength="50" maxlength="800" rows="6"></textarea>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="age"><i class="fas fa-birthday-cake"></i>العمر *</label>
-                            <input type="number" id="age" name="age" min="18" max="100" required placeholder="18+">
+                        <!-- معلومات الاتصال -->
+                        <div class="form-section">
+                            <h2 class="form-section-title">
+                                <i class="fas fa-address-card"></i>
+                                معلومات الاتصال
+                            </h2>
+                            
+                            <div class="form-group">
+                                <label for="discord"><i class="fab fa-discord"></i>Discord Username *</label>
+                                <input type="text" id="discord" name="discord" placeholder="username#1234" required pattern=".*#.*">
+                                <small style="color: var(--text-secondary); font-size: 0.85rem; display: block; margin-top: 0.5rem;">يجب أن يحتوي على #</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fivem"><i class="fas fa-id-card"></i>معرف FiveM / Steam *</label>
+                                <input type="text" id="fivem" name="fivem" required placeholder="مثال: steam:11000010abcdef أو FiveM ID" minlength="6">
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="fivem"><i class="fas fa-id-card"></i>معرف FiveM / Steam *</label>
-                            <input type="text" id="fivem" name="fivem" required placeholder="مثال: steam:11000010abcdef أو FiveM ID" minlength="6">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="reason"><i class="fas fa-question-circle"></i>سبب طلب التفعيل *</label>
-                            <textarea id="reason" name="reason" required placeholder="اذكر سبب طلب التفعيل وأي معلومات مهمة" minlength="20" maxlength="1000"></textarea>
-                            <small style="color: var(--text-secondary); font-size: 0.85rem; display: block; margin-top: 0.5rem;">الحد الأدنى: 20 حرف</small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="additional"><i class="fas fa-info-circle"></i>معلومات إضافية</label>
-                            <textarea id="additional" name="additional" placeholder="أي معلومات إضافية تريد إضافتها" maxlength="500"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn-submit">إرسال طلب التفعيل</button>
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            إرسال طلب التفعيل
+                        </button>
                     </form>
                 </div>
 
@@ -136,6 +203,9 @@
                             <li>✦ العمر المسموح: 18 سنة فما فوق</li>
                             <li>✦ يجب كتابة Discord Username بشكل صحيح</li>
                             <li>✦ تأكد من كتابة معرف FiveM / Steam بشكل صحيح</li>
+                            <li>✦ الإجابة على جميع الأسئلة بشكل مفصل وواقعي</li>
+                            <li>✦ الصدق في البيانات الشخصية أساس القبول</li>
+                            <li>✦ سيتم تقييم قدراتك على تقمص الشخصية</li>
                             <li>✦ سيتم مراجعة الطلب من قبل الإدارة</li>
                         </ul>
                     </div>

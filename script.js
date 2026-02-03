@@ -55,17 +55,39 @@ document.addEventListener('DOMContentLoaded', function() {
             const discordPayload = {
                 content: "🔔 **وصل طلب تفعيل جديد!**",
                 embeds: [{
-                    title: "بيانات مقدم الطلب",
+                    title: "📋 طلب تفعيل Infinite City RP",
                     color: 10181046, 
                     fields: [
-                        { name: "👤 الاسم", value: data.name || "غير متوفر", inline: true },
-                        { name: "🎂 العمر", value: data.age || "غير متوفر", inline: true },
+                        // الجزء الأول: البيانات الشخصية
+                        { name: "👤 الهوية الواقعية", value: data.realIdentity || "غير متوفر", inline: false },
+                        { name: "🎭 بطاقة تعريف الشخصية", value: data.characterIdentity || "غير متوفر", inline: false },
+                        { name: "📖 السيرة الذاتية", value: data.characterBio || "غير متوفر", inline: false },
+                        { name: "🧠 التحليل النفسي", value: data.psychologicalAnalysis || "غير متوفر", inline: false },
+                        { name: "💼 السجل المهني", value: data.experience || "غير متوفر", inline: false },
+                        { name: "🎯 الهدف من الاستيطان", value: data.settlementGoal || "غير متوفر", inline: false },
+                        
+                        // الجزء الثاني: اختبار الأداء
+                        { name: "🤝 اختبار الأمانة", value: data.honestyTest || "غير متوفر", inline: false },
+                        { name: "⚠️ إدارة الأزمات", value: data.crisisManagement || "غير متوفر", inline: false },
+                        { name: "👤 موقف قلب الطاولة", value: data.hostageSituation || "غير متوفر", inline: false },
+                        { name: "💗 قيمة الحياة (Fear RP)", value: data.fearRP || "غير متوفر", inline: false },
+                        
+                        // معلومات الاتصال
                         { name: "💬 ديسكورد", value: data.discord || "غير متوفر", inline: true },
-                        { name: "📝 السبب", value: data.reason || "غير متوفر", inline: false }
+                        { name: "🎮 معرف FiveM/Steam", value: data.fivem || "غير متوفر", inline: true }
                     ],
+                    footer: {
+                        text: "Infinite City RP - نظام طلبات التفعيل"
+                    },
                     timestamp: new Date()
                 }]
             };
+
+            // إظهار شاشة التحميل
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            if (loadingOverlay) {
+                loadingOverlay.style.display = 'flex';
+            }
 
             fetch(webhookURL, {
                 method: 'POST',
@@ -74,13 +96,39 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(res => {
                 if (res.ok) {
-                    alert('تم إرسال طلبك بنجاح!');
+                    // إخفاء شاشة التحميل
+                    if (loadingOverlay) {
+                        loadingOverlay.style.display = 'none';
+                    }
+                    
+                    // إظهار النافذة المنبثقة للنجاح
+                    const successModal = document.getElementById('successModal');
+                    const successDetails = document.getElementById('successDetails');
+                    
+                    if (successModal && successDetails) {
+                        successDetails.innerHTML = `
+                            <p><strong>الاسم:</strong> ${data.realIdentity}</p>
+                            <p><strong>ديسكورد:</strong> ${data.discord}</p>
+                            <p><strong>معرف FiveM:</strong> ${data.fivem}</p>
+                        `;
+                        successModal.style.display = 'flex';
+                    }
+                    
                     applyForm.reset();
                 } else {
+                    if (loadingOverlay) {
+                        loadingOverlay.style.display = 'none';
+                    }
                     alert('فشل في الإرسال، تأكد من إعدادات الويب هوك.');
                 }
             })
-            .catch(err => console.error('خطأ:', err));
+            .catch(err => {
+                console.error('خطأ:', err);
+                if (loadingOverlay) {
+                    loadingOverlay.style.display = 'none';
+                }
+                alert('حدث خطأ في الإرسال، يرجى المحاولة مرة أخرى.');
+            });
         });
     }
 });
@@ -99,5 +147,58 @@ function initDiscordLogin() {
     }
 }
 
+// 6. نظام الأكورديون للقوانين
+function toggleAccordion(id) {
+    const accordionContent = document.getElementById(id);
+    const allAccordionContents = document.querySelectorAll('.accordion-content');
+    const allAccordionHeaders = document.querySelectorAll('.accordion-header');
+    
+    // إغلاق جميع الأكورديونات الأخرى
+    allAccordionContents.forEach(content => {
+        if (content.id !== id) {
+            content.classList.remove('active');
+        }
+    });
+    
+    // إزالة الكلاس النشط من جميع الهيدرات
+    allAccordionHeaders.forEach(header => {
+        header.classList.remove('active');
+    });
+    
+    // فتح/إغلاق الأكورديون المطلوب
+    if (accordionContent) {
+        const isActive = accordionContent.classList.contains('active');
+        
+        if (!isActive) {
+            accordionContent.classList.add('active');
+            // إضافة الكلاس النشط للهيدر المقابل
+            const currentHeader = document.querySelector(`[onclick="toggleAccordion('${id}')"]`);
+            if (currentHeader) {
+                currentHeader.classList.add('active');
+            }
+        } else {
+            accordionContent.classList.remove('active');
+        }
+    }
+}
+
+// 7. إغلاق النافذة المنبثقة للنجاح
+function closeSuccessModal() {
+    const successModal = document.getElementById('successModal');
+    if (successModal) {
+        successModal.style.display = 'none';
+    }
+}
+
 // تشغيل الوظائف عند التحميل
-document.addEventListener('DOMContentLoaded', initDiscordLogin);
+document.addEventListener('DOMContentLoaded', function() {
+    initDiscordLogin();
+    
+    // فتح أول قسم تلقائياً (اختياري)
+    const firstAccordion = document.querySelector('.accordion-content');
+    const firstHeader = document.querySelector('.accordion-header');
+    if (firstAccordion && firstHeader) {
+        firstAccordion.classList.add('active');
+        firstHeader.classList.add('active');
+    }
+});

@@ -139,12 +139,15 @@ const REDIRECT_URI = window.location.origin + '/apply.html';
 
 function initDiscordLogin() {
     const loginBtn = document.getElementById('discordLoginBtn');
-    if (loginBtn) {
-        loginBtn.addEventListener('click', () => {
-            const url = `https://discord.com/api/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=token&scope=identify`;
-            window.location.href = url;
-        });
-    }
+    if (!loginBtn) return;
+
+    const CLIENT_ID = '1462616394012295270'; 
+    // السطر القادم هو الأهم: يأخذ رابط الصفحة الحالية تلقائياً
+    const REDIRECT_URI = encodeURIComponent(window.location.origin + window.location.pathname);
+    
+    const AUTH_URL = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=token&scope=identify`;
+
+    loginBtn.href = AUTH_URL;
 }
 
 // 6. نظام الأكورديون للقوانين

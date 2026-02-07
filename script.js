@@ -190,9 +190,33 @@ function closeSuccessModal() {
     }
 }
 
+// 8. تحديد الرابط النشط تلقائياً
+function setActiveNavigation() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-list a');
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        
+        // استخراج اسم الملف من الرابط
+        const href = link.getAttribute('href');
+        if (href) {
+            const fileName = href.split('/').pop();
+            
+            // التحقق إذا كان الرابط هو الصفحة الحالية
+            if (currentPath.includes(fileName) || 
+                (currentPath === '/' && fileName === 'index.html') ||
+                (currentPath.endsWith('/') && fileName === 'index.html')) {
+                link.classList.add('active');
+            }
+        }
+    });
+}
+
 // تشغيل الوظائف عند التحميل
 document.addEventListener('DOMContentLoaded', function() {
     initDiscordLogin();
+    setActiveNavigation();
     
     // فتح أول قسم تلقائياً (اختياري)
     const firstAccordion = document.querySelector('.accordion-content');
